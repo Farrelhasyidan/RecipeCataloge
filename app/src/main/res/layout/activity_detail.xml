@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white" >
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/orange"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:title="Detail Recipe"
+            app:expandedTitleTextAppearance="@style/ExpandedTitleTheme"
+            app:collapsedTitleTextAppearance="@style/CollapsedTitleTheme">
+
+            <ImageView
+                android:id="@+id/img_detail"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:foreground="@drawable/shadow_black"
+                android:contentDescription="Image For Detail"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_name_detail"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:text="apa pun dummy data"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="bottom"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/toolbar_detail"
+            app:layout_collapseMode="pin"
+            android:theme="?attr/actionBarTheme" />
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="80dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_calories"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/yellow"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/cv_carbo"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_calories_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:text="Calories"
+                    android:textAlignment="center" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_carbo"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="@color/blue"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/cv_protein"
+                app:layout_constraintStart_toEndOf="@id/cv_calories"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_carbo_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:text="Carbo"
+                    android:textAlignment="center" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_protein"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/orange"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cv_carbo"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_protein_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:text="Protein"
+                    android:textAlignment="center" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_description"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@id/cv_calories"
+                app:layout_constraintEnd_toEndOf="@id/cv_protein"
+                app:layout_constraintTop_toBottomOf="@id/cv_calories" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_name_recipe"
+                android:text="Recipe"
+                app:layout_constraintTop_toBottomOf="@+id/tv_description"
+                app:layout_constraintStart_toStartOf="@+id/tv_description"
+                app:layout_constraintEnd_toEndOf="@+id/tv_description"
+                android:layout_marginTop="24dp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_ingredients"
+                android:text="Ingredients"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name_recipe"
+                app:layout_constraintStart_toStartOf="@+id/tv_description"
+                app:layout_constraintEnd_toEndOf="@+id/tv_description"
+                android:layout_marginTop="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_ingredients_detail"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ingredients"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/tv_description"
+                app:layout_constraintEnd_toEndOf="@+id/tv_description" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_direction"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ingredients_detail"
+                android:layout_marginTop="16dp"
+                android:textStyle="bold"
+                android:text="Direction:"
+                app:layout_constraintStart_toStartOf="@+id/tv_description"
+                app:layout_constraintEnd_toEndOf="@+id/tv_description" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_direction_detail"
+                app:layout_constraintTop_toBottomOf="@+id/tv_direction"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/tv_description"
+                app:layout_constraintEnd_toEndOf="@+id/tv_description" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

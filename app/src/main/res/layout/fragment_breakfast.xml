@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.BreakFastFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:id="@+id/cv_banner"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="@drawable/shadow_black"
+                android:id="@+id/img_banner"
+                android:src="@drawable/img_shrimp"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/content_image_for_banner" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:textColor="@color/white"
+                    android:textSize="24dp"
+                    android:text="@string/txt_garlic_butter_shrimp"
+                    android:textStyle="bold"
+                    android:id="@+id/tv_foodbanner"
+                    app:layout_constraintEnd_toStartOf="@id/view_white_rounded"
+                    app:layout_constraintTop_toTopOf="@id/view_white_rounded"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <View
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/view_white_rounded"
+                    android:background="@drawable/white_rounded"
+                    app:layout_constraintStart_toEndOf="@id/tv_foodbanner"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@id/view_white_rounded"
+                    app:layout_constraintStart_toStartOf="@id/view_white_rounded"
+                    app:layout_constraintTop_toTopOf="@id/view_white_rounded"
+                    android:text="@string/text_1_2_k"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:paddingTop="4dp"
+                    android:id="@+id/tv_price" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/view_white_rounded"
+                    app:layout_constraintEnd_toEndOf="@id/view_white_rounded"
+                    app:layout_constraintBottom_toBottomOf="@id/view_white_rounded"
+                    android:text="@string/txt_cooked"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:paddingBottom="4dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rv_breakfast"
+            app:layout_constraintTop_toBottomOf="@+id/cv_banner"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="32dp"
+            tools:listitem="@layout/row_item_recipe" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
